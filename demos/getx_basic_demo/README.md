@@ -130,28 +130,31 @@ lib/
 │   │   ├── theme/               # 主题配置
 │   │   └── utils/               # 工具函数
 │   │
-│   ├── data/                    # 数据层
-│   │   ├── models/              # 数据模型
-│   │   ├── providers/           # 数据源（API/本地数据库）
-│   │   └── repositories/        # 仓库模式（可选）
+│   ├── models/                  # 数据模型
+│   │   ├── user_model.dart
+│   │   └── todo_model.dart
 │   │
-│   ├── modules/                 # 功能模块（按页面组织）
-│   │   ├── home/
-│   │   │   ├── bindings/        # 依赖注入
-│   │   │   ├── controllers/     # 控制器
-│   │   │   └── views/           # 页面和组件
+│   ├── repositories/            # 仓库模式（来源本地数据库或者API调用，可选）
+│   │   ├── user_repo.dart
+│   │   └── todo_repo.dart
+│   │
+│   ├── controllers/             # 控制器（Binding 依赖注入）
+│   │   ├── user_controler.dart
+│   │   └── todo_controler.dart
+│   │
+│   ├── views/                   # 页面和组件
+│   │   ├── pages/               # 页面
+│   │   │   ├── user_page.dart
+│   │   │   └── todo_page.dart
 │   │   │
-│   │   └── detail/
-│   │       ├── bindings/
-│   │       ├── controllers/
-│   │       └── views/
+│   │   └── widgets/             # 可复用组件
+│   │       ├── user_item.dart
+│   │       └── todo_list_item.dart
 │   │
 │   ├── routes/                  # 路由管理
-│   │   ├── app_pages.dart       # 路由配置
-│   │   └── app_routes.dart      # 路由常量
+│   │   └── app_routes.dart      # 路由表 + GetPage配置
 │   │
-│   └── services/                # 全局服务
-│       ├── storage_service.dart # 本地存储
+│   └── services/                # 跨页面状态共享、复杂业务逻辑
 │       ├── auth_service.dart    # 认证服务
 │       └── api_service.dart     # 网络请求
 │
