@@ -134,11 +134,11 @@ lib/
 │   │   ├── user_model.dart
 │   │   └── todo_model.dart
 │   │
-│   ├── repositories/            # 仓库模式（来源本地数据库或者API调用，可选）
+│   ├── repositories/            # 数据源（来源本地数据库或者API调用，可选）
 │   │   ├── user_repo.dart
 │   │   └── todo_repo.dart
 │   │
-│   ├── controllers/             # 控制器（Binding 依赖注入）
+│   ├── controllers/             # 控制器（当前页面的业务逻辑和状态，使用Binding依赖注入）
 │   │   ├── user_controler.dart
 │   │   └── todo_controler.dart
 │   │
@@ -154,7 +154,7 @@ lib/
 │   ├── routes/                  # 路由管理
 │   │   └── app_routes.dart      # 路由表 + GetPage配置
 │   │
-│   └── services/                # 跨页面状态共享、复杂业务逻辑
+│   └── services/                # 全局服务（跨页面状态共享、复杂业务逻辑等）
 │       ├── auth_service.dart    # 认证服务
 │       └── api_service.dart     # 网络请求
 │
